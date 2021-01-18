@@ -18,7 +18,7 @@ app.use(bodyParser.json()) //WHAT´S THE FUNCTIONALITY OF THS LINE?
 //our route will go on http://localhost:8080
 //it´s a good thing for it to have a prefix because of the different API versions
 // QUE TIENEN QUE VER LAS VERSIONES DE API CON EL PREFIJO
-var router = require('./routes')
+var router = require('./app/controllers/routes')
 app.use('/api',router) //enlazamos a /api el folder routes
 app.listen(port) // our server starts working
 console.log(`API listening on port ${port}`);
