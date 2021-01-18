@@ -1,0 +1,22 @@
+/* sign up */
+
+main{
+    padding-top: 1rem; 
+}
+
+.signup-title{
+    text-align: center;
+    font-size: 1.8rem;
+    /*asignar color*/
+}
+
+.signup-form label{
+    font-weight: bold;
+}
+
+.signup-form label,
+.signup-form input{
+    display: block;
+    margin-top: 1rem;
+}
+

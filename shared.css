@@ -4,3 +4,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap'); /* BODY */
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap'); /* SPECIAL CASES */
 
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    /* overflow-x: hidden; NO RECUERDO PARA QUE SIRVE*/ 
+}

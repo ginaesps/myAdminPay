@@ -1,0 +1,4 @@
+--> REM: Root Element (it always goes to the root element of the website)
+
+RESEARCH TIME:
+what´s Express, corse and bodyParser?

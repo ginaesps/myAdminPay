@@ -1,0 +1,21 @@
+bodyParser ensures that your server handles incoming request through the express middleware 
+(parsing the body of incoming requests is part of the procedure when handling requests)
+
+? bodyParser: nmp package that parses incoming request bodies in a middleware before your handlers, available under the req.body property.
+
+bodyParser.json()
+middleware for parsing json objects (several options)
+Basically returns middleware that only parses JSON and only looks at requests where the content-type header matches the type option. This parser accepts any unicode encoding of the body.
+
+bodyParser.urlencoded({ extended: true})
+middleware for parsing bodies from the URL
+Returns middleware that only parses {urlencoded} bodies and only looks at requests where the content-type header matches the type option. 
+Only accepts UTF-8 encoding of the body.
+
+app.use(bodyParser.json()) looks at the requests where the content-type: app/json header is present 
+and transforms the text-based JSON input into the accesible variables 
+under req.body.app.use(bodyParser.urlencoded({extended: true}) does the same for URL-encoded requests.
+
+A new body object containing the parsed data is populated on the request object after the middleware. 
+This object can contain key-value pairs, where the value can be a string or array (when extended is false), 
+or any type (when extended is true).

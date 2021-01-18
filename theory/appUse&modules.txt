@@ -1,0 +1,22 @@
+The explanation will be about the functionality of modules
+
+app.use function
+This example code included in the express module is an app object instance for us to create the Express server.
+
+? middleware stack that can be costumized in app.configure()
+
+!! to setup middleware, you invoke app.use(<specific_middleware_layer_here>) for every middleware layer 
+you want to add (it can be generic to all paths, or triggered only on specific ones your server handles)
+
+All of the invoked modules are added into a middleware stack
+
+stack: 
+      [ { route: '', handle: [Function] },
+        { route: '', handle: [Function: bodyParser] },
+        { route: '', handle: [Function: cookieParser] } ]
+
+The blank spaces in route mean that when that layers where added, they were allowed to be triggered on any route.
+In the case of adding a custom middleware layer that only triggered on the path /user/:id that would reflected 
+as a string in the route field of that middleware layer object
+--> Each layer adds a function that specifically handles something to your flow
+

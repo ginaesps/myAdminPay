@@ -1,0 +1,24 @@
+process.env.PORT || ###
+fuente: https://qastack.mx/programming/18864677/what-is-process-env-port-in-node-js
+
+En muchos entornos, por convención se puede configurar la variable de entorno para indicar al servidor web en qué puerto escuchar.
+
+process.env.PORT || ### significa que lo que esté en la variable de entorno PORT de tal forma que el servidor 
+es capaz de aceptar parámetros del entorno para saber en qué puerto escuchar.
+
+En caso de que la app se aloje en otro servicio (AWS) configura el puerto de forma independiente
+
+----------
+Esta es una aplicación Express mínima que se implementará en Elastic Beanstalk de Amazon:
+
+var express = require('express');
+var app = express();
+
+app.get('/', function (req, res) {
+  res.send('Hello World!');
+});
+
+// use port 3000 unless there exists a preconfigured port
+var port = process.env.port || 3000;
+
+app.listen(port);
