@@ -24,9 +24,3 @@ router.put('/:id',(req,res)=> {
 module.exports = router;
 
 //localhost:1339/debtor/owner/:id
-
-/*
-recuperar todos los deudores de un owner
-recuperar uno en especifico
-modificar uno
-*/
