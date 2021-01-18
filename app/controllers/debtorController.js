@@ -1,4 +1,4 @@
-const mysql = require('../db/mysql')
+const mysql = require('../../db/mysql')
 
 module.exports = {
     listOwnerDebtors: (req,res)=>{
@@ -16,7 +16,8 @@ module.exports = {
         mysql.query('insert into debtor set ?', req.body, queryAnalises(err,rows,fields))
     },
     modify: (req,res) => {
-        mysql.query('update debtor set ?',req.body, queryAnalises(err,rows,fields))
+        let id = req.params.id;
+        mysql.query('update debtor set ? where id=?',[req.body, id], queryAnalises(err,rows,fields))
     }
 }
 //the needed id en cases like listOwnerDebtors will be obtained from the login of the user that's asking for the method

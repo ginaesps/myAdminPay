@@ -8,7 +8,7 @@ our route will go on http://localhost:8080*/
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const express = require('express') //we call Express
-var router = require('./app/routes') // var router = require('./app/controllers/routes')
+var router = require('./routes') 
 const port = process.env.PORT || 1339 //port assignment
 
 var app = express() // this variable will be the easy way to use the express module
