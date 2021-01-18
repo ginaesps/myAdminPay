@@ -1,3 +1,6 @@
+/*
+this file makes the connection with the MySQL DBMS */
+
 const msyql = require ('mysql');
 const mysqlConnection = mysql.createConnection({
     host:'localhost',

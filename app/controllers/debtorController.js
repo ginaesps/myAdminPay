@@ -1,4 +1,4 @@
-let mysql = require('../db/mysql')
+const mysql = require('../db/mysql')
 
 module.exports = {
     listOwnerDebtors: (req,res)=>{
@@ -18,4 +18,5 @@ module.exports = {
     modify: (req,res) => {
         mysql.query('update debtor set ?',req.body, queryAnalises(err,rows,fields))
     }
-}//mandar desde html info del owner 
+}
+//the needed id en cases like listOwnerDebtors will be obtained from the login of the user that's asking for the method

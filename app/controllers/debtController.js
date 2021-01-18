@@ -1,6 +1,4 @@
-const mysqlConnection = require('../db/mysql');
-
-mysql = require('../db/mysql')
+const mysql = require('../db/mysql')
 
 module.exports = {
     listDebtorDebts: (req,res) => {

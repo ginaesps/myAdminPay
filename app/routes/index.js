@@ -1,23 +1,18 @@
 /* 
-VINCULA ARCHIVOS clientes.js CON RUTA /clientes
-AQUÍ DEBEMOS ASIGNAR 
-/debts
-/owners
-/debtors
-/payments
-EN CADA UNA DE ESTAS RUTAS VAN LOS MÉTODOS A TRABAJAR Y LOS ENLAZAS CON CONTROLADORES CORRESPONDIENTES
-EN LA RUTA PARA CADA ENTIDAD SE DEBEN DEFINIR LOS MÉTODOS Y PARÁMETROS A USAR 
- */
+we link debt.js with all of the /debt routes, debtor.js with /debtor routes and owner.js with /OWNER routes
 
-var router = require('express').Router();
+in each /routeName , you should set the needed methods and link each one of them with the corresponding controller
+*/
 
-var debtor = require('./debtor')
+var router = require('express').Router();  
+
+var debtor = require('./debtor') // this line should be written for each bd entity that will have assigned methods
 router.use('/debtor',debtor)
 
 var debt = require('./debt')
 router.use('/debt',debt)
 
-router.get('/', (req,res) =>{
+router.get('/', (req,res) =>{ // debug for you to make sure that everything´s working as expected
     res.status(200).json({message: 'You´ve been succesfully connected to our API'})
     // 200 : succesful HTTP page connection
 } )
