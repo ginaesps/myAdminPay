@@ -1,0 +1,18 @@
+METODOS DE PETICION HTTP
+
+Equivalencia CRUD: 
+create - 
+read - get
+update - post
+delete - delete
+
+--> Get: retrieves data from a server at the specified resource.
+Since it only requests data and doesn´t modify resources, it´s considered a safe and idempotent method.
+Should return a 200 status code
+--> Post: sends data to the API server to create or update a resource. The data sent to the server is stored in the request body of the HTTP request.
+The simplest form is via a contact form on a website  (the most common format is JSON)
+--> Delete: borra un recurso en específico
+
+Otros métodos:
+--> Head: pide una respuesta idéntica a la de petición de get pero sin el cuerpo de la respuesta
+--> Put: reemplaza representaciones actuales del recurso de destino con la carga útil de petición

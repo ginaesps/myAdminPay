@@ -12,6 +12,7 @@ router.use('/debtor',debtor)
 var debt = require('./debt')
 router.use('/debt',debt)
 
+
 router.get('/', (req,res) =>{ // debug for you to make sure that everything´s working as expected
     res.status(200).json({message: 'You´ve been succesfully connected to our API'})
     // 200 : succesful HTTP page connection

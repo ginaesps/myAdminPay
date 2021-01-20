@@ -1,9 +1,9 @@
 var debtorController = require('../controllers/debtorController.js')
 var router = require('express').Router()
 
-router.get('/owner/:id', (req,res)=>{ // res le lleva info de servidor a cliente
-    debtorController.listOwnerDebtors(req,res); // listOwnerDebtors is the name of the created method
-}) // example of the needed route to access this method: http://localhost:1339/debtor/owner/:id
+router.get('/owner/:id', (req,res)=>{ 
+    debtorController.listOwnerDebtors(req,res);
+}) // route to access: http://localhost:1339/debtor/owner/:id
 
 router.get('/:id', (req,res) =>{
     debtorController.getDebtor(req,res);
