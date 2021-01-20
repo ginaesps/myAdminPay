@@ -12,6 +12,9 @@ module.exports = {
     list: (req,res) =>{
         mysql.query('select first_name, paternal_surname, maternal_surname, email from debtor', queryAnalises(err,rows,fields))
     },
+    howMany: (req,res) =>{
+        mysql.query('select count(id) from debtor', queryAnalises(err,rows,fields))
+    },
     create: (req,res) =>{
         mysql.query('insert into debtor set ?', req.body, queryAnalises(err,rows,fields))
     },

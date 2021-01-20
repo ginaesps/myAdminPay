@@ -26,3 +26,10 @@ router.put('/:id', (req,res) =>{
 router.get('/:id', (req,res) =>{
     ownerController.getOwner(req,res);
 })
+
+/*
+//how many debtors does an owner have associated
+router.get('/debtor', (req,res) =>{
+    ownerController.associatedDebtors(req,res);
+})
+*/
