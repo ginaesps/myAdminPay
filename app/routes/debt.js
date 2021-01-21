@@ -32,6 +32,11 @@ router.get('/debtor/:id', (req,res) =>{
     debtController.latestByDebtor(req,res);
 })
 
+//how many debts and how much out of the total it is by owner
+router.get('/debt/:id', (req,res) =>{
+    ownerController.totalAndAmountGeneratedByOwner(req,res);
+})
+
 router.post('/', (req,res) =>{
     debtController.create(req,res);
 })

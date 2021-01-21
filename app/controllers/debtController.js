@@ -26,6 +26,10 @@ module.exports = {
         let id = req.params.id;
         mysql.query('select amount, concept from debt where debtor_id = ? and created_at = ( select max(created_at) from debt)', id, queryAnalises(err,rows,fields))
     },
+    totalAndAmountGeneratedByOwner: (req,res) => {
+        let id = req.params.id;
+        mysql.query('select count(owner_id), sum(amount) from debt where owner_id=?', id, queryAnalises(err,rows,fields))
+    },
     create: (req,res) => {
         mysql.query('insert into debt set ?', req.body, queryAnalises(err,rows,fields))
     }

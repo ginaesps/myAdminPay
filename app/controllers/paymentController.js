@@ -1,7 +1,7 @@
 const mysql = require('../../bd/mysql')
 
 module.exports = {
-    listDebtorPayments: (req,res) =>{
+    totalAndAmountByDebtor: (req,res) =>{
         let id = req.params.id;
         mysql.query('select count(debtor_id), sum(amount) from payment where debtor_id=?', id, queryAnalises(err,rows,fields))
     },
@@ -23,6 +23,10 @@ module.exports = {
     listByDate: (req,res) =>{
         let id = req.params.id ; 
         mysql.query('select amount, concept from payment where owner_id = ? and created_at like "%?%" ',[id,req.body], queryAnalises(err,rows,fields))
+    },
+    totalAssociatedPayments: (req,res) =>{
+        let id = req.params.id;
+        mysql.query('select count(owner_id), sum(amount) from payment where owner_id=?', id, queryAnalises(err,rows,))
     },
     totalAndAmountByDebtorByDate: (req,res) =>{
         let id = req.params.id;
