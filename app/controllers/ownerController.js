@@ -12,4 +12,4 @@ module.exports = {
         let id = req.params.id ; 
         mysql.query('select first_name, paternal_surname, maternal_surname, email from debtor where id=?', id, queryAnalises(err,rows,fields))
     }
-}
+} 
