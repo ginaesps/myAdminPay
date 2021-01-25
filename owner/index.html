@@ -41,65 +41,103 @@
 
             <div>
                 <h2>Debts</h2>
+                <button type="button" class="more_info">Generate debt</button>
                 <button type="button" class="more_info">More details</button>
 
-                <div class="owner__features" id="totalAndAmountDebts">
-                    <div>
-                        <h3>Total generated debts: </h3><!--how many-->
-                    </div>
-                    <div>
-                        <h3>Total amount: </h3>
-                    </div>
+                <div class="owner__features">
+                    <form id="debt__creation">
+                        <fieldset>
+                            <legend>Debt's information</legend>
+                            <div>
+                                <label for="d_debtor_id">Debtor ID</label>
+                                <input type="number" id="d_debtor_id">
+                            </div>
+                            <div>
+                                <label for="debt_concept">Debt concept</label>
+                                <input type="text" id="debt_concept">
+                            </div>
+                            <div>
+                                <label for="debt_amount">Debt amount</label>
+                                <input type="number" id="debt_amount" placeholder="e.g : $1000">
+                            </div>
+                            <input type="button" value="Generate">
+                        </fieldset>
+                    </form>
                 </div>
 
-                <div class="owner__features" id="generatedDebts">
-                    <table>
-                        <caption>Total generated debts</caption>
-                        <thead>
-                            <tbody>
-                                <tr>
-                                    <th>Debtor</th>
-                                    <th>Concept</th>
-                                    <th>Date</th>
-                                    <th>Amount ($)</th>
-                                </tr>
-                            </tbody>
-                        </thead>
-                        <tr>
-                            <td class="totalDebts" colspan="2">Total debts: </td>
-                        </tr>
-                        <tr></tr>
-                        <tr>
-                            <td class="finalAmountDebts" colspan="2">Final quantity: </td>
-                        </tr>
-                        <tr></tr>
-                    </table>
-
-                    <div class="owner__features">
-                        <form id="debtsByDate">
-                            <label for="debtDate">Date from which you generated charges</label>
-                            <input type="date">
-                        </form>
+                <div class="owner__features" id="debt__details">    
+                    <div class="owner__features" id="generatedDebts">
                         <table>
-                            <caption>Generated debts by date</caption>
+                            <caption>Total generated debts</caption>
                             <thead>
                                 <tbody>
                                     <tr>
                                         <th>Debtor</th>
                                         <th>Concept</th>
+                                        <th>Date</th>
                                         <th>Amount ($)</th>
                                     </tr>
                                 </tbody>
                             </thead>
+                            <tr>
+                                <td class="totalDebts" colspan="2">Total debts: </td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td class="finalAmountDebts" colspan="2">Final quantity: </td>
+                            </tr>
                             <tr></tr>
                         </table>
+    
+                        <div class="owner__features">
+                            <form id="debtsByDate">
+                                <label for="debtDate">Date from which you generated charges</label>
+                                <input type="date">
+                            </form>
+                            <table>
+                                <caption>Generated debts by date</caption>
+                                <thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>Debtor</th>
+                                            <th>Concept</th>
+                                            <th>Amount ($)</th>
+                                        </tr>
+                                    </tbody>
+                                </thead>
+                                <tr></tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
+                
             </div>
 
             <div>
                 <h2>Payments</h2>
+                <button type="button" class="more_info">Register payment</button>
                 <button type="button" class="more_info">More details</button>
+
+                <div class="owner__features">
+                    <form id="payment__record">
+                        <fieldset>
+                            <legend>Payment's information</legend>
+                            <div>
+                                <label for="p_debtor_id">Debtor ID</label>
+                                <input type="number" id="p_debtor_id">
+                            </div>
+                            <div>
+                                <label for="payment_concept">Payment concept</label>
+                                <input type="text" id="payment_concept">
+                            </div>
+                            <div>
+                                <label for="payment_amount">Payment amount</label>
+                                <input type="number" id="payment_amount" placeholder="e.g : $1000">
+                            </div>
+                            <input type="button" value="Register">
+                        </fieldset>
+                    </form>
+                </div>
 
                 <div class="owner__features" id="totalAndAmountPayments">
                     <table>
@@ -115,7 +153,7 @@
                             </tbody>
                         </thead>
                         <tr>
-                            <td class="totalDebts" colspan="2">Total of payments: </td>
+                            <td class="totalDebts" colspan="2">Total payments: </td>
                         </tr>
                         <tr></tr>
                         <tr>
@@ -163,7 +201,24 @@
             
             <div>
                 <h2>Debtors</h2>
-                <button type="button" class="more_info">More details</button>
+                <button type="button" class="more_info">See list</button>
+
+                <div class="owner__features" id="associatedDebtors">
+                    <table>
+                        <caption>Associated debtors</caption>
+                        <thead>
+                            <tbody>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>ID</th>
+                                    <th>Phone number</th>
+                                    <th>Email</th>
+                                </tr>
+                            </tbody>
+                        </thead>
+                        <tr></tr>
+                    </table>
+                </div>
             </div>
             
         </div>
