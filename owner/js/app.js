@@ -12,8 +12,13 @@ document.getElementById('btnLogin').addEventListener('click', ()=>{
             headers:{
                 'Content-Type': 'application/json'
             }
-        }).then(res => console.log(res.json()))
-        .then(response => console.log('Success:', response))
+        }).then(res => res.json()        
         .catch(error => console.error('Error:', error))
+        .then((json) => {
+            //console.log(json.rows[0]);
+            document.getElementById('hello').innerHTML = `
+                <h1>Welcome, ${json.rows[0].first_name}</h1>    
+            `
+        }))
         ;
 })

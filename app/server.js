@@ -32,24 +32,24 @@ app.use('/api',router) // we link /api to the folder routes
 
 rutaLogin.post('/',(req,res)=>{
     console.log(req.body);
-    let user=req.body.login;
+    let user=req.body.phone_number;
     let pwd=req.body.password;
     if (!user || !pwd)
         res.json({mensaje:"Faltan datos"});
     else{
-        mysql.query('select * from users where login = ? and password = ?', [user, pwd],(err,rows,fields)=>{
+        mysql.query('select * from owner where phone_number = ? and password = ?', [user, pwd],(err,rows,fields)=>{
             if (!err){
                 console.log(rows[0].login);
                 
 
-                if (rows[0].login==user){
-                    const payload={check:true};
+                if (rows.length!=0){
+                    /*const payload={check:true};
                     const token = jwt.sign(payload,app.get('llave'),{
                     expiresIn:1440
-                    });
+                    });*/
                     res.json({
                     mensaje: 'Autenticación correcta',
-                    token: token,
+                    //token: token,
                     rows:rows
                     });     
                 }else{
