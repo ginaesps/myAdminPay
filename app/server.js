@@ -26,7 +26,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended : true }))
 app.use(bodyParser.json())
 
-app.post('/login')
+app.use('/login', router)
 
 app.use('/api',router) // we link /api to the folder routes
 
