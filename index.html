@@ -6,42 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>myAdminPay</title>
     <link rel="shortcut icon" href="images/favicon.png">
-    <link rel="stylesheet" href="styles/shared.css">
-    <link rel="stylesheet" href="styles/main.css"> 
+    <link rel="stylesheet" href="./shared.css">
+    <link rel="stylesheet" href="./main.css"> 
     <!--HTML is parsed top to bottom, this means that the second file will rewrite the specified properties of the first one-->
 </head>
 <body>
     <main class="signup-page">
-        <h1 class="signup-title">Create your owner account!</h1>
-        <div>
-            <p>If you already have an account,<a href="sign-in/sign-in.html">sign in!</a></p>
+        <h1 class="signup-title">Create your account!</h1>
+        <div class="signin-redirection">
+            <p>If you already have an account, <a href="sign-in/sign-in.html">sign in!</a></p>
         </div>
-        <form action="" class="signup-form">
+        <form class="signup-form">
             <label for="first_name">First Name</label>
-            <input type="text" name="first_name" id="first_name" maxlength="50" required>
+            <input type="text" id="first_name" maxlength="50" required>
     
             <label for="paternal_surname">Paternal surname</label>
-            <input type="text" name="paternal_surname" id="paternal_surname" maxlength="50" required>
+            <input type="text" id="paternal_surname" maxlength="50" required>
     
             <label for="maternal_surname">Maternal surname</label>
-            <input type="text" name="maternal_surname" id="maternal_surname" maxlength="50">
+            <input type="text" id="maternal_surname" maxlength="50">
     
             <label for="phone_number">Phone number</label>
-            <input type="tel" name="phone_number" id="phone_number" maxlength="10" placeholder="e.g.: 3122345544">
+            <input type="tel" id="phone_number" maxlength="10" placeholder="e.g.: 3122345544" required>
     
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" maxlength="50" placeholder="example@org.com">
+            <input type="email" id="email" maxlength="50" placeholder="example@org.com" required>
     
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" maxlength="50" placeholder="up to 50 chars">
-    
+            <label for="pwd">Password</label>
+            <input type="password" id="pwd" maxlength="50" placeholder="up to 50 chars" required>
+
+            <label for="role">Select your role</label>
+            <select id="role" required>
+                <option value="owner">Owner</option><!--HOW DO I ASSIGN THE VALUE?-->
+                <option value="debtor" id="debtorRole">Debtor</option>
+            </select>
+
+            <div id="debtorOptions"></div>
+            
+            <input type="checkbox" id="agree-terms" required> 
             <label for="agree_terms">I agree to 
                 <a href="#">Terms &amp; Conditions</a>
             </label>
     
-            <button type="button" class="button">Sign up</button>
-        </form> <!-- COMPLETAR ACTION-->
+            <button type="button" class="button" id="btnSignUp">Sign up</button>
+        </form>
     </main>
+
+    <footer class="main-footer"></footer> <!--COMPLETE-->
 
 </body>
 </html>

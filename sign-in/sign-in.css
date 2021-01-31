@@ -1,0 +1,49 @@
+main{
+    padding-top: 1rem; 
+}
+
+.signin-title{
+    text-align: center;
+    font-size: 1.8rem;
+    color: rgb(0, 0, 0);
+}
+
+.signin-description{
+    text-align: center;
+    font-size: 1.1rem;
+    color: black;
+    width: 18rem;
+    margin: auto;
+}
+
+.signin-form{
+    padding: 1rem;
+    margin: auto;
+    width: 14rem;
+    font-size: 1.1rem;
+}
+
+.signin-form label{
+    font-weight: bold;
+}
+
+.signin-form label,
+.signin-form input{
+    display: block;
+    margin-top: 1rem;
+}
+
+.signin-form input{
+    border: ;
+}
+
+.signin-form input:focus{
+    outline: none;
+    background: rgb(227, 239, 247);
+    border-color: #0b2f7c;
+}
+
+.signin-form button[type="button"]{
+    display: block;
+    margin-top: 1rem;
+}

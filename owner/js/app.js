@@ -13,7 +13,7 @@ document.getElementById('btnLogin').addEventListener('click', ()=>{
         pwd=document.getElementById("pwd").value;
     
         var data = {phone_number: login, password:pwd};
-    
+     
         fetch('http://localhost:1339/login', {
             method: 'POST', // or 'PUT'
             body: JSON.stringify(data), // data can be `string` or {object}!

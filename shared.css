@@ -11,5 +11,22 @@
 body{
     font-family: 'Quicksand', sans-serif;
     margin: 0;
-    /* overflow-x: hidden; NO RECUERDO PARA QUE SIRVE*/ 
+    overflow-x: hidden; /*it will help for when I arrange the header*/
+}
+
+.button{
+    background: #f56a2a;
+    color: white;
+    font: inherit;
+    border: 1.5px solid #e2500d;
+    padding: 0.5rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button:hover,
+.button:active{
+    background: white;
+    color: #0e4f1f;
 }
