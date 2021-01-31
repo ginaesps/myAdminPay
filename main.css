@@ -24,7 +24,8 @@ main{
 .signin-redirection a:hover,
 .signin-redirection a:active{
     color: rgb(104, 176, 243);
-    border-bottom: 5px rgb(107, 151, 247) solid;th: 18rem;
+    border-bottom: 5px rgb(107, 151, 247) solid;
+    width:18rem;
 }
 
 .signup-form{
