@@ -36,7 +36,7 @@
     <section class="signin">
         <p>Haven't created an account yet? <a href="./sign-in.html">Sign up</a></p>
     </section> -->
-
+    <!--BEGINNING: LOGIN FORM-->
     <div class="signin-page">
         <div>
             <h1 class="signin-title">Login</h1>
@@ -54,7 +54,9 @@
             <button type="button" class="button" id="btnLogin">Sign in</button>
         </form>
     </div>
+    <!--END: LOGIN FORM-->
 
+    <!--BEGINNING: OWNER VIEW-->
     <main id="mainOwner">
         <section id="hello">
             <!--ASSIGN USERNAME-->
@@ -223,9 +225,52 @@
             
             <div>
                 <h2>Debtors</h2>
-                <button type="button" id="btnCreateDebtor">Create debtor</button>
+                <button type="button" id="btnRegisterDebtor">Register debtor</button>
                 <div class="owner__features" id="createDebtor">
-
+                    <form id="registerDebtor-form">
+                        <fieldset>
+                            <legend>Debtor's information</legend>
+                            <div>
+                                <label for="first_name">First Name</label>
+                                <input type="text" id="first_name" maxlength="50" required>
+                            </div>
+                            
+                            <div>
+                                <label for="paternal_surname">Paternal surname</label>
+                                <input type="text" id="paternal_surname" maxlength="50" required>
+                            </div>
+                            <div>
+                                <label for="maternal_surname">Maternal surname</label>
+                                <input type="text" id="maternal_surname" maxlength="50">
+                            </div>
+                            
+                            <div>
+                                <label for="phone_number">Phone number</label>
+                                <input type="tel" id="phone_number" maxlength="10" placeholder="e.g.: 3122345544" required>
+                            </div>
+                            
+                            <div>
+                                <label for="email">Email</label>
+                                <input type="email" id="email" maxlength="50" placeholder="example@org.com" required>
+                            </div>
+                    
+                            <!--THE DEFAULT PWD IS THE DEBTOR'S PHONE NUMBER-->
+                            <!--<label for="pwd">Password</label>
+                            <input type="password" id="pwd" maxlength="50" placeholder="up to 50 chars" disabled>-->
+                        </fieldset>
+                        <fieldset>
+                            <legend>Initial debt</legend>
+                            <div>
+                                <label for="idebt_concept">Debt concept</label>
+                                <input type="text" id="idebt_concept">
+                            </div>
+                            <div>
+                                <label for="idebt_amount">Debt amount</label>
+                                <input type="number" id="idebt_amount" placeholder="e.g : $1000">
+                            </div>
+                        </fieldset>
+                        <button type="button" class="button" id="btnRegisteredDebtor">Register</button>
+                    </form>
                 </div>
 
                 <button type="button" class="more_info" id="btnAssociatedDebtors">See list</button>
@@ -250,12 +295,14 @@
             
         </div>
         </section>
-
     </main>
+    <!--END: OWNER VIEW-->
 
+    <!--BEGINNING: MAIN FOOTER-->
     <footer>
         <!--is there going to be one?-->
     </footer>
+    <!--END: MAIN FOOTER-->
 
     <script src="./js/app.js"></script>
 

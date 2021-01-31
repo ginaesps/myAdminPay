@@ -1,3 +1,5 @@
+const { findSourceMap } = require("module");
+
 function hide(objectId){
     document.getElementById(objectId).style.display = 'none';
 }
@@ -31,10 +33,10 @@ document.getElementById('btnLogin').addEventListener('click', ()=>{
                 phone_number: json.rows[0].phone_number,
                 email: json.rows[0].email
             }
+            var userId = json.rows[0].id; // instead of an input, the value was stored in a variable for safety reasons
             document.getElementById('hello').innerHTML = ` 
                 <h1>Welcome, ${json.rows[0].first_name}</h1>
-                <input type="number" id="owner_id" disabled value='${json.rows[0].id}'</input>     
-            ` // en este caso, como pasar la informacion a la página de owner o debtor?
+            ` 
         }))
         ;
 })
@@ -56,4 +58,46 @@ document.getElementById('generate__debt').addEventListener('click', ()=>{
 
 document.getElementById('btnGenerateDebt').addEventListener('click', ()=>{
     hide('debt__creation');
+})
+
+document.getElementById('btnRegisterDebtor').addEventListener('click',()=>{
+    show('registerDebtor-form');
+})
+
+document.getElementById('btnRegisteredDebtor').addEventListener('click',()=>{
+    hide('registerDebtor-form');
+    
+    let first_name, paternal_surname, maternal_surname, phone_number, email, idebt_concept, idebt_amount;
+
+    first_name=document.getElementById('first_name').value;
+    paternal_surname=document.getElementById('paternal_surname').value;
+    maternal_surname=document.getElementById('maternal_surname').value;
+    phone_number=document.getElementById('phone_number').value;
+    email=document.getElementById('email').value;
+    pwd=phone_number;
+    idebt_concept=document.getElementById('idebt_concept');
+    idebt_amount=document.getElementById('idebt_amount');
+
+    var debtorCreation = {
+        first_name: first_name,
+        paternal_surname: paternal_surname,
+        maternal_surname: maternal_surname,
+        phone_number: phone_number,
+        email: email,
+        password: pwd
+    }
+
+    fetch('http://localhost:1339/debtor/', {
+        method:'POST',
+        body: JSON.stringify(data),
+        headers:{
+            'Content-Type': 'application/json'
+        }
+    }).then(res => res.json()
+    .catch(error =>console.error('Error: ',error))
+    .then(json => {
+        debtorCreation;
+    }))
+
+    //the reason that causes that you can create the initialDebt variable at the same level than debtorCreation is because you need the debtor's id
 })

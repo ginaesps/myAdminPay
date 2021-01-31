@@ -1,3 +1,3 @@
-#owner_id, #associatedDebtors, #debt__creation, #mainOwner{
+#owner_id, #associatedDebtors, #debt__creation, #registerDebtor-form/*, #mainOwner*/{
     display: none;
 }
