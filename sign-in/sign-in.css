@@ -33,9 +33,9 @@ main{
     margin-top: 1rem;
 }
 
-.signin-form input{
+/*.signin-form input{
     border: ;
-}
+}*/
 
 .signin-form input:focus{
     outline: none;

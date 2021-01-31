@@ -1,12 +1,4 @@
-function hide(objectId){
-    document.getElementById(objectId).style.display = 'none';
-}
-
-function show(objectId){
-    document.getElementById(objectId).style.display = 'block'; // que atributo se le debería asignar?
-}
-
-document.getElementById('btnLogin').addEventListener('click', ()=>{
+/*document.getElementById('btnLogin').addEventListener('click', ()=>{
     let login, pwd; //idd, nombred, edadd;
     
         login=document.getElementById("phone_number").value;
@@ -37,23 +29,4 @@ document.getElementById('btnLogin').addEventListener('click', ()=>{
             ` // en este caso, como pasar la informacion a la página de owner o debtor?
         }))
         ;
-})
-
-document.getElementById('btnAssociatedDebtors').addEventListener('click', ()=>{
-    //agregar 
-    show('associatedDebtors');
-})
-
-document.getElementById('btnHideDebtors').addEventListener('click', ()=>{
-    hide('associatedDebtors');
-})
-
-//document.getElementById('d_debtor_id', )
-
-document.getElementById('generate__debt').addEventListener('click', ()=>{
-    show('debt__creation');
-})
-
-document.getElementById('btnGenerateDebt').addEventListener('click', ()=>{
-    hide('debt__creation');
-})
+})*/
