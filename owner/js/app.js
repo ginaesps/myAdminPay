@@ -1,5 +1,3 @@
-const { findSourceMap } = require("module");
-
 function hide(objectId){
     document.getElementById(objectId).style.display = 'none';
 }
@@ -8,16 +6,17 @@ function show(objectId){
     document.getElementById(objectId).style.display = 'block'; // que atributo se le debería asignar?
 }
 
+//user login
 document.getElementById('btnLogin').addEventListener('click', ()=>{
     let login, pwd; //idd, nombred, edadd;
     
-        login=document.getElementById("phone_number").value;
+        login=document.getElementById("login").value;
         pwd=document.getElementById("pwd").value;
     
         var data = {phone_number: login, password:pwd};
      
         fetch('http://localhost:1339/login', {
-            method: 'POST', // or 'PUT'
+            method: 'POST', 
             body: JSON.stringify(data), // data can be `string` or {object}!
             headers:{
                 'Content-Type': 'application/json'
@@ -34,11 +33,11 @@ document.getElementById('btnLogin').addEventListener('click', ()=>{
                 email: json.rows[0].email
             }
             var userId = json.rows[0].id; // instead of an input, the value was stored in a variable for safety reasons
+            document.getElementById('signin-page')
             document.getElementById('hello').innerHTML = ` 
                 <h1>Welcome, ${json.rows[0].first_name}</h1>
             ` 
-        }))
-        ;
+        }));
 })
 
 document.getElementById('btnAssociatedDebtors').addEventListener('click', ()=>{
@@ -95,8 +94,8 @@ document.getElementById('btnRegisteredDebtor').addEventListener('click',()=>{
         }
     }).then(res => res.json()
     .catch(error =>console.error('Error: ',error))
-    .then(json => {
-        debtorCreation;
+    .then(response => {
+        console.log('Success: ', response);
     }))
 
     //the reason that causes that you can create the initialDebt variable at the same level than debtorCreation is because you need the debtor's id

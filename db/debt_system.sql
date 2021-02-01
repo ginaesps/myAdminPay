@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 31-01-2021 a las 19:30:16
+-- Tiempo de generación: 31-01-2021 a las 23:37:04
 -- Versión del servidor: 8.0.22
 -- Versión de PHP: 7.1.7
 
@@ -141,7 +141,14 @@ ALTER TABLE `debt`
 --
 ALTER TABLE `debtor`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `uq_debtor_phone_number` (`phone_number`),
   ADD KEY `fk_debtor_owner` (`owner_id`) USING BTREE;
+
+--
+-- Indices de la tabla `owner`
+--
+ALTER TABLE `owner`
+  ADD UNIQUE KEY `uq_owner_phone_number` (`phone_number`);
 
 --
 -- Indices de la tabla `payment`
