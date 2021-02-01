@@ -6,6 +6,8 @@ function show(objectId){
     document.getElementById(objectId).style.display = 'block'; // que atributo se le debería asignar?
 }
 
+let userId=null;
+
 //user login
 document.getElementById('btnLogin').addEventListener('click', ()=>{
     let login, pwd; //idd, nombred, edadd;
@@ -25,14 +27,14 @@ document.getElementById('btnLogin').addEventListener('click', ()=>{
         .catch(error => console.error('Error:', error))
         .then((json) => {
             //console.log(json.rows[0]);
-            var ownerInfo = {
+            let ownerInfo = {
                 first_name: json.rows[0].first_name,
                 paternal_surname: json.rows[0].paternal_surname,
                 maternar_surname: json.rows[0].maternar_surname,
                 phone_number: json.rows[0].phone_number,
                 email: json.rows[0].email
             }
-            var userId = json.rows[0].id; // instead of an input, the value was stored in a variable for safety reasons
+            userId = json.rows[0].id; // instead of an input, the value was stored in a variable for safety reasons
             document.getElementById('signin-page')
             document.getElementById('hello').innerHTML = ` 
                 <h1>Welcome, ${json.rows[0].first_name}</h1>
@@ -86,17 +88,18 @@ document.getElementById('btnRegisteredDebtor').addEventListener('click',()=>{
         password: pwd
     }
 
-    fetch('http://localhost:1339/debtor/', {
+    fetch('http://localhost:1339/api/debtor/', {
         method:'POST',
-        body: JSON.stringify(data),
+        body: JSON.stringify(debtorCreation),
         headers:{
             'Content-Type': 'application/json'
         }
     }).then(res => res.json()
     .catch(error =>console.error('Error: ',error))
-    .then(response => {
-        console.log('Success: ', response);
-    }))
+    .then(json=>{
+        //aviso por unos segundos de insercion exitosa
+        ;
+    })
 
     //the reason that causes that you can create the initialDebt variable at the same level than debtorCreation is because you need the debtor's id
 })

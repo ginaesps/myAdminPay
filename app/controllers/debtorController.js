@@ -10,13 +10,25 @@ module.exports = {
         mysql.query('select first_name, paternal_surname, maternal_surname, email from debtor where id=?', id, queryAnalises(err,rows,fields))
     },
     list: (req,res) =>{
-        mysql.query('select first_name, paternal_surname, maternal_surname, email from debtor', queryAnalises(err,rows,fields))
+        mysql.query('select first_name, paternal_surname, maternal_surname, email from debtor', (err,rows,fields)=>{
+            if(!err){
+                res.json(rows);
+            }else{
+                res.json(err)
+            }        
+        })
     },
     howMany: (req,res) =>{
         mysql.query('select count(id) from debtor', queryAnalises(err,rows,fields))
     },
     create: (req,res) =>{
-        mysql.query('insert into debtor set ?', req.body, queryAnalises(err,rows,fields))
+        mysql.query('insert into debtor set ?', req.body, (err,rows,fields)=>{
+            if(!err){
+                res.json(rows);
+            }else{
+                res.json(err)
+            }        
+        })
     },
     modify: (req,res) => {
         let id = req.params.id;
