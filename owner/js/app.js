@@ -6,6 +6,10 @@ function show(objectId){
     document.getElementById(objectId).style.display = 'block'; // que atributo se le debería asignar?
 }
 
+function successMessage(objectId, message){
+    document.getElementById(objectId).innerHTML = `<p> ${message} </p>`;
+}
+
 let userId=null;
 
 //user login
