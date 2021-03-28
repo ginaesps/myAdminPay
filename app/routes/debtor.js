@@ -3,7 +3,7 @@ var router = require('express').Router()
 
 router.get('/owner/:id', (req,res)=>{ 
     debtorController.listOwnerDebtors(req,res);
-}) // route to access: http://localhost:1339/debtor/owner/:id
+}) // route to access: http://localhost:1339/api/debtor/owner/:id
 
 //retrieve a specific debtor's information
 router.get('/:id', (req,res) =>{

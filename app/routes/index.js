@@ -4,12 +4,12 @@ we link debt.js with all of the /debt routes, debtor.js with /debtor routes and 
 in each /routeName , you should set the needed methods and link each one of them with the corresponding controller
 */
 
-var router = require('express').Router();  
+const router = require('express').Router();  
 
-var debtor = require('./debtor') // this line should be written for each bd entity that will have assigned methods
+const debtor = require('./debtor') // this line should be written for each bd entity that will have assigned methods
 router.use('/debtor',debtor)
 
-var debt = require('./debt')
+const debt = require('./debt')
 router.use('/debt',debt)
 
 

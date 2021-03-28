@@ -21,7 +21,7 @@ document.getElementById('btnLogin').addEventListener('click', ()=>{
     
         var data = {phone_number: login, password:pwd};
      
-        fetch('http://localhost:1339/login', {
+        fetch('http://localhost:1339/login/', {
             method: 'POST', 
             body: JSON.stringify(data), // data can be `string` or {object}!
             headers:{
@@ -30,7 +30,7 @@ document.getElementById('btnLogin').addEventListener('click', ()=>{
         }).then(res => res.json()        
         .catch(error => console.error('Error:', error))
         .then((json) => {
-            //console.log(json.rows[0]);
+            console.log(json.rows[0])//(json.rows[0]);
             let ownerInfo = {
                 first_name: json.rows[0].first_name,
                 paternal_surname: json.rows[0].paternal_surname,
@@ -43,6 +43,7 @@ document.getElementById('btnLogin').addEventListener('click', ()=>{
             document.getElementById('hello').innerHTML = ` 
                 <h1>Welcome, ${json.rows[0].first_name}</h1>
             ` 
+            show('mainOwner')
         }));
 })
 
@@ -59,6 +60,18 @@ document.getElementById('btnHideDebtors').addEventListener('click', ()=>{
 
 document.getElementById('generate__debt').addEventListener('click', ()=>{
     show('debt__creation');
+    document.getElementById('btnRecharge').addEventListener('click', ()=>{
+        fetch('http://localhost:1339/api/debtor/owner/:id')
+        .then((response) => response.json())
+        .then(json =>{
+            let associatedDebtors = "";
+            json.forEach(user => {
+                opciones+=`
+                <option value='${user.id}'>${user.name}</option>`;
+            });
+            document.getElementById('d_debtor_id').innerHTML = associatedDebtors;
+        })
+    })
 })
 
 document.getElementById('btnGenerateDebt').addEventListener('click', ()=>{
@@ -103,7 +116,7 @@ document.getElementById('btnRegisteredDebtor').addEventListener('click',()=>{
     .then(json=>{
         //aviso por unos segundos de insercion exitosa
         ;
-    })
+    }))
 
     //the reason that causes that you can create the initialDebt variable at the same level than debtorCreation is because you need the debtor's id
 })

@@ -5,7 +5,8 @@ bodyParser ensures that your server handles incoming request through the express
 
 bodyParser.json()
 middleware for parsing json objects (several options)
-Basically returns middleware that only parses JSON and only looks at requests where the content-type header matches the type option. This parser accepts any unicode encoding of the body.
+Basically returns middleware that only parses JSON and only looks at requests where the content-type header matches the type option. 
+This parser accepts any unicode encoding of the body.
 
 bodyParser.urlencoded({ extended: true})
 middleware for parsing bodies from the URL

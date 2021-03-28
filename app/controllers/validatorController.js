@@ -1,4 +1,4 @@
-const mysql = require('../../bd/mysql')
+/*const mysql = require('../../bd/mysql')
 
 module.exports = {
     validate: (req,res) =>{
@@ -17,10 +17,10 @@ module.exports = {
                 if(rows.length==0){
                     res.json({mensaje:"You haven\'t created an account yet"});
                 }else{
-                    /*const payload={check:true};
+                    const payload={check:true};
                     const token=jwt.sign(payload,app.get('llave'),{
                         expiresIn:240
-                    });*/
+                    });
  
                     res.json({message:"You've logged in successfully", rows:rows});
                 }
@@ -29,3 +29,4 @@ module.exports = {
         }
     }
 }
+*/

@@ -1,0 +1,37 @@
+/*
+<div id="yaab-alert-box" class="a-box a-alert a-alert-success a-spacing-small">
+<div class="a-box-inner a-alert-container"><h4 class="a-alert-heading">Dirección eliminada</h4>
+<i class="a-icon a-icon-alert"></i><div class="a-alert-content"></div></div></div>
+*/
+
+.a-alert-success {
+    border-color: #7fc87f;
+}
+.a-spacing-small, .a-ws .a-ws-spacing-small {
+    margin-bottom: 8px!important;
+}
+.a-box {
+    display: block;
+    border-radius: 4px;
+    border: 1px #ddd solid;
+    background-color: #fff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.a-text-left {
+    text-align: left!important;
+}
+.a-ember body {
+    font-family: "Amazon Ember",Arial,sans-serif;
+}
+body {
+    color: #0F1111;
+}
+body {
+    font-size: 13px;
+    line-height: 19px;
+}
+

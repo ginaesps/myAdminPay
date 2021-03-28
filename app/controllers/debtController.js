@@ -1,4 +1,4 @@
-const { query } = require('../../db/mysql');
+const { query } = require('../../db/mysql'); //NO RECONOZCO ESTA LINEA 
 const mysql = require('../../db/mysql')
 
 module.exports = {
